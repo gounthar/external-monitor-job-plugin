@@ -4,7 +4,7 @@ import hudson.EnvVars;
 import hudson.util.StreamTaskListener;
 import jenkins.model.Jenkins;
 import org.junit.Assert;
-import org.jvnet.hudson.test.Bug;
+import org.jvnet.hudson.test.Issue;
 import org.jvnet.hudson.test.HudsonTestCase;
 
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class ExternalRunTest extends HudsonTestCase {
         assertEquals(Result.ABORTED,b.getResult());
     }
 
-    @Bug(11592)
+    @Issue("JENKINS-11592")
     public void testExternalJob() throws Exception {
         ExternalJob p = jenkins.createProject(ExternalJob.class, createUniqueProjectName());
         ExternalRun b = p.newBuild();
